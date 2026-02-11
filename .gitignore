@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+*.slnx
+/WPF.BootCamps/bin/Debug/net10.0-windows
+/WPF.BootCamps/obj
+*.user
+*.csproj

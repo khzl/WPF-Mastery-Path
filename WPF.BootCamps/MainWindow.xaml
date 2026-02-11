@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPF.BootCamps.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps"
+        mc:Ignorable="d"
+        Title="WPF BootCamps" Height="450" Width="800">
+
+    <Grid>
+        <!-- هنا تضاف عناصر التحكم  -->
+        <!-- Button Show Message -->
+        <Button
+            x:Name="btnClickMe"
+            Content="Click Me..!"
+            Width="100"
+            Height="40"
+            HorizontalAlignment="Center"
+            Click="btnClickMe_Click"/>
+
+    </Grid>
+    
+</Window>

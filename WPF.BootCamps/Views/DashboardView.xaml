@@ -1,0 +1,141 @@
+﻿<Window x:Class="WPF.BootCamps.Views.DashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views"
+        mc:Ignorable="d"
+        Title="DashboardView" Height="450" Width="800">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="SidebarBack" Color="#F8F9FA"/>
+        <SolidColorBrush x:Key="MainBack" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="AccentBlue" Color="#4361EE"/>
+        <SolidColorBrush x:Key="TextDark" Color="#2B2D42"/>
+        <SolidColorBrush x:Key="TextMuted" Color="#8D99AE"/>
+
+        <Style x:Key="StatCard" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.05" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextDark}"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="10,2"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8" Padding="15,0">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EDF2FF"/>
+                    <Setter Property="Foreground" Value="{StaticResource AccentBlue}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource MainBack}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="{StaticResource SidebarBack}" BorderBrush="#EEE" BorderThickness="0,0,1,0">
+            <StackPanel Margin="0,20">
+                <TextBlock Text="اسم النظام" FontSize="22" FontWeight="Bold" Foreground="{StaticResource AccentBlue}" Margin="25,0,0,30"/>
+
+                <Button Content="🏠 الرئيسية" Style="{StaticResource MenuButton}" Background="#EDF2FF" Foreground="{StaticResource AccentBlue}"/>
+                <Button Content="📊 التقارير" Style="{StaticResource MenuButton}"/>
+                <Button Content="👥 المستخدمين" Style="{StaticResource MenuButton}"/>
+                <Button Content="⚙️ الإعدادات" Style="{StaticResource MenuButton}"/>
+
+                <Separator Margin="20,20" Background="#DDD"/>
+                <Button Content="🚪 تسجيل الخروج" Style="{StaticResource MenuButton}" Foreground="#E63946"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Margin="0,0,0,30">
+                <StackPanel>
+                    <TextBlock Text="لوحة التحكم" FontSize="28" FontWeight="Bold" Foreground="{StaticResource TextDark}"/>
+                    <TextBlock Text="مرحباً بك مجدداً، إليك ملخص اليوم" Foreground="{StaticResource TextMuted}"/>
+                </StackPanel>
+                <Border Background="#F1F3F5" CornerRadius="20" HorizontalAlignment="Right" Padding="15,5" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="30" Height="30" Fill="{StaticResource AccentBlue}" Margin="0,0,10,0"/>
+                        <TextBlock Text="أحمد علي" VerticalAlignment="Center" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+
+            <UniformGrid Grid.Row="1" Columns="3">
+                <Border Style="{StaticResource StatCard}">
+                    <StackPanel>
+                        <TextBlock Text="إجمالي المبيعات" Foreground="{StaticResource TextMuted}" FontSize="14"/>
+                        <TextBlock Text="$54,230" FontSize="24" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Text="+12% من الشهر الماضي" Foreground="Green" FontSize="11"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource StatCard}">
+                    <StackPanel>
+                        <TextBlock Text="العملاء الجدد" Foreground="{StaticResource TextMuted}" FontSize="14"/>
+                        <TextBlock Text="1,240" FontSize="24" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Text="+5% من الأسبوع الماضي" Foreground="Green" FontSize="11"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource StatCard}">
+                    <StackPanel>
+                        <TextBlock Text="المهام المعلقة" Foreground="{StaticResource TextMuted}" FontSize="14"/>
+                        <TextBlock Text="18" FontSize="24" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Text="-2 مراجعة مطلوبة" Foreground="#E63946" FontSize="11"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <Border Grid.Row="2" Style="{StaticResource StatCard}" Margin="10,20,10,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="آخر العمليات" FontWeight="Bold" FontSize="18" Margin="0,0,0,15"/>
+
+                    <DataGrid Grid.Row="1" Background="Transparent" BorderThickness="0" CanUserAddRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="الرقم" Binding="{Binding ID}" Width="50"/>
+                            <DataGridTextColumn Header="العميل" Binding="{Binding Customer}" Width="*"/>
+                            <DataGridTextColumn Header="الحالة" Binding="{Binding Status}" Width="100"/>
+                            <DataGridTextColumn Header="المبلغ" Binding="{Binding Amount}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+    
+</Window>

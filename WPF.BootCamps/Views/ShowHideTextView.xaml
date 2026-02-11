@@ -1,0 +1,76 @@
+﻿<Window x:Class="WPF.BootCamps.Views.ShowHideTextView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views"
+        mc:Ignorable="d"
+        Title="ShowHideTextView"
+        Height="400"
+        Width="550"
+        WindowStartupLocation="CenterScreen"
+        Background="#F8FAFC">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Themes/Styles.xaml"/>
+    </Window.Resources>
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,25">
+            <TextBlock Text="Content Visibility" FontSize="26" FontWeight="ExtraBold" Foreground="#1E293B" HorizontalAlignment="Center"/>
+            <TextBlock Text="Manage sensitive information securely" Foreground="#64748B" HorizontalAlignment="Center" FontSize="12" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="20" Padding="25" Margin="0,0,0,25">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="2" Opacity="0.05" Color="Black"/>
+            </Border.Effect>
+
+            <Grid>
+                <TextBlock x:Name="txtPlaceholder" Text="Content is Hidden" Foreground="#CBD5E1" 
+                           FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Visibility="Collapsed"/>
+
+                <TextBlock x:Name="txtSecret" 
+                           Text="هذا نص سري محمي بتصميم حديث. يمكنك استخدامه لعرض البيانات الحساسة فقط عند حاجة المستخدم إليها لضمان الخصوصية والاحترافية."
+                           TextWrapping="Wrap" FontSize="15" LineHeight="24" Foreground="#475569"
+                           TextAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <UniformGrid Grid.Row="2" Columns="3">
+            <Button Content="Show" Style="{StaticResource ModernButton}" Background="{StaticResource SuccessColor}" Click="btnShow_Click"/>
+            <Button Content="Hide" Style="{StaticResource ModernButton}" Background="{StaticResource DangerColor}" Click="BtnHide_Click"/>
+            <Button Content="Toggle" Style="{StaticResource ModernButton}" Background="{StaticResource PrimaryColor}" Click="BtnToggle_Click"/>
+        </UniformGrid>
+
+        <Border Grid.Row="3" Background="#F1F5F9" CornerRadius="10" Padding="10" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Ellipse x:Name="statusDot" Width="8" Height="8" Fill="#22C55E" Margin="0,0,10,0"/>
+                <TextBlock x:Name="txtStatus" Text="System Ready: Text Visible" FontSize="12" Foreground="#64748B" FontWeight="Medium"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+    
+</Window>

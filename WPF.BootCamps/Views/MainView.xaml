@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF.BootCamps.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views"
+        mc:Ignorable="d"
+        Title="التطبيق المنظم" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize">
+    <Grid>
+        <TextBlock
+            Text="Welcome To Programmer World"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="26" Margin="203,10,0,0"/>
+
+        <TextBlock
+          Text="Khazaal"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top"
+          FontSize="26" Margin="343,66,0,0"/>
+        <Button Content="Click Me ......" HorizontalAlignment="Left" Height="69" Margin="48,123,0,0" VerticalAlignment="Top" Width="190"/>
+        
+        <!-- فتح نافذة من نافذة اخرى -->
+        <Button
+            Content="Open AboutView"
+            Height="40" 
+            Width="150"
+            FontSize="15"
+            FontWeight="Bold"
+            Click="BtnOpenAbout_Click" Margin="512,229,138,165"/>
+        
+        <!-- Open ReportView -->
+        <Button
+            Content="Open ReportView"
+            Height="40"
+            Width="160"
+            FontSize="15"
+            FontWeight="Bold"
+            Click="BtnOpenReport_Click" Margin="227,229,413,165"/>
+        
+    </Grid>
+</Window>
