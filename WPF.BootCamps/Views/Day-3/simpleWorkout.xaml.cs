@@ -10,17 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_3
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for simpleWorkout.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class simpleWorkout : Window
     {
-        public SettingsView()
+        public simpleWorkout()
         {
             InitializeComponent();
-          
         }
     }
 }

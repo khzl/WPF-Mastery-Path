@@ -8,19 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_3
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class Page1 : Page
     {
-        public SettingsView()
+        public Page1()
         {
             InitializeComponent();
-          
         }
     }
 }

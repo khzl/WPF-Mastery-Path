@@ -10,17 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_4
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for CardContentInsideStackPanel.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class CardContentInsideStackPanel : Window
     {
-        public SettingsView()
+        public CardContentInsideStackPanel()
         {
             InitializeComponent();
-          
         }
     }
 }

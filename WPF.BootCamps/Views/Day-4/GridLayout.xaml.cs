@@ -10,17 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_4
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for GridLayout.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class GridLayout : Window
     {
-        public SettingsView()
+        public GridLayout()
         {
             InitializeComponent();
-          
         }
     }
 }

@@ -10,17 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_2
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for LevelOne.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class LevelOne : Window
     {
-        public SettingsView()
+        public LevelOne()
         {
             InitializeComponent();
-          
         }
     }
 }

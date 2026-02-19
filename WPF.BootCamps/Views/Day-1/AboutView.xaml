@@ -32,8 +32,7 @@
                 Content="OK"
                 Width="100"
                 Margin="0,30,0,0"
-                HorizontalAlignment="Center"
-                Click="btnOk_Click"/>
+                HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_4.GridLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_4"
+        mc:Ignorable="d"
+        Title="GridLayout" Height="500" 
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Header -->
+            <RowDefinition Height="*"/> <!-- Main -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/> <!-- Side Bar  -->
+            <ColumnDefinition Width="*"/> <!-- Content -->
+        </Grid.ColumnDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2"
+                Background="#2C3E50" Height="50">
+            <TextBlock Text="Header"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="22"
+                       FontWeight="Bold"/>
+        </Border>
+        <!-- Side Bar -->
+        <Border Grid.Row="1" Grid.Column="0"
+                Background="#34495E">
+            <TextBlock
+                Text="SideBar"
+                Foreground="White"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="22"
+                FontWeight="Bold"/>
+        </Border>
+        <!-- Content -->
+        <Grid Grid.Row="1" Grid.Column="1"
+              Background="#ECF0F1">
+            <TextBlock
+                Text="Contnet Area"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="24" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Window>

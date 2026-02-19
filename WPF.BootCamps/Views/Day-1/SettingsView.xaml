@@ -111,8 +111,8 @@
                 <Grid>
                     <Button Content="Reset to Default" HorizontalAlignment="Left" Foreground="#64748B" Background="Transparent" BorderThickness="0"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Content="Cancel" Style="{StaticResource ActionButton}" Background="#F1F5F9" Foreground="#475569" Click="BtnCancel_Click"/>
-                        <Button Content="Save Changes" Style="{StaticResource ActionButton}" Background="{StaticResource AccentBlue}" Foreground="White" Click="BtnSave_Click"/>
+                        <Button Content="Cancel" Style="{StaticResource ActionButton}" Background="#F1F5F9" Foreground="#475569"/>
+                        <Button Content="Save Changes" Style="{StaticResource ActionButton}" Background="{StaticResource AccentBlue}" Foreground="White"/>
                     </StackPanel>
                 </Grid>
             </Border>

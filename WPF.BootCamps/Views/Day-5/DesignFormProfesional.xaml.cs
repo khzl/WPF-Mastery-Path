@@ -10,17 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF.BootCamps.Views
+namespace WPF.BootCamps.Views.Day_5
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for DesignFormProfesional.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class DesignFormProfesional : Window
     {
-        public SettingsView()
+        public DesignFormProfesional()
         {
             InitializeComponent();
-          
         }
     }
 }
