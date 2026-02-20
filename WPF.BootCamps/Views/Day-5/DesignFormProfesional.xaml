@@ -20,6 +20,11 @@
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <TextBlock
+            Text="Create Account"
+            FontSize="24" FontWeight="Bold"
+            HorizontalAlignment="Left"
+            Margin="88,-75,0,99" Grid.ColumnSpan="2"/>
         <!-- UserName -->
         <TextBlock
             Text="UserName: "
