@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+     <!-- BaseOn (Inheritance Styles) ممكن نبني Styles فوق Styles و هذا الشي يشبه الوراثة في البرمجة --> 
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    
+    <!-- Primary Button Style -->
+    <Style x:Key="PrimaryButtonStyle" 
+           TargetType="Button"
+           BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Padding" Value="16,0"/>
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+
+        <!-- triggers نقدر نخلي الزر يغير لونه عند المرور عليه  
+        فـ هذا مستوى احترافي -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.85"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="DangerButtonStyle"
+       TargetType="Button"
+       BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <!-- Implicit TextBox Styles -->
+    <Style TargetType="TextBox">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/> <!-- هسه صار Responseive فعليا -->
+        <Setter Property="Margin" Value="0,0,0,16"/>
+        <Setter Property="Padding" Value="8,0"/>
+    </Style>
+    
+    <!-- Implicit TextBlock Styles -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="0,0,0,8"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/> <!-- حتى ما ينكسر النص اذا النافذة اذا صغرت -->
+    </Style>
+   
+    
+    
+</ResourceDictionary>

@@ -9,7 +9,16 @@
         Height="600" 
         Width="540"
         WindowStartupLocation="CenterScreen">
-
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="/Resources/Styles/StylesCalculator.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
     <Grid Background="{StaticResource PrimaryBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
