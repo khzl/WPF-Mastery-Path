@@ -19,6 +19,7 @@
                 الالوان و الستايلات اللي نعملها بالبرنامج هنا فقط نعرف هذولا ال الالولان و الستايلات داخل هذا الملف خاطر يتعرف عليهم -->
                 <ResourceDictionary Source="/Resources/Themes/LightTheme.xaml"/>
                 <ResourceDictionary Source="/Styles/SampleStyles.xaml"/>
+                <ResourceDictionary Source="/Styles/TypographySystemStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

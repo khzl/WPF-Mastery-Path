@@ -45,6 +45,7 @@
     
     <!-- Implicit TextBlock Styles -->
     <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="Margin" Value="0,0,0,8"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/> <!-- حتى ما ينكسر النص اذا النافذة اذا صغرت -->
