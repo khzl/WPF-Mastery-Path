@@ -16,7 +16,7 @@
                        Style="{StaticResource BodyTextStyle}"/>
             <!-- Sections -->
             <UniformGrid Columns="3" Margin="0,16,0,0">
-                <Border Padding="16">
+                <Border Padding="16" Background="{StaticResource BackgroundBrush}">
                     <StackPanel>
                         <TextBlock Text="Users"
                                    Style="{StaticResource SectionTitleStyle}"/>
@@ -24,7 +24,7 @@
                                    Style="{StaticResource BodyTextStyle}"/>
                     </StackPanel>
                 </Border>
-                <Border Padding="16">
+                <Border Padding="16" Background="{StaticResource BackgroundBrush}">
                     <StackPanel>
                         <TextBlock Text="Orders"
                                    Style="{StaticResource SectionTitleStyle}"/>
@@ -32,7 +32,7 @@
                                    Style="{StaticResource BodyTextStyle}"/>
                     </StackPanel>
                 </Border>
-                <Border Padding="16">
+                <Border Padding="16" Background="{StaticResource BackgroundBrush}">
                     <StackPanel>
                         <TextBlock Text="Revenue"
                                    Style="{StaticResource SectionTitleStyle}"/>
