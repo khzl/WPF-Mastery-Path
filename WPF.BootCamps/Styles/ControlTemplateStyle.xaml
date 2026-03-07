@@ -82,5 +82,91 @@
         </Setter>
     </Style>
     
+    <!-- TextBox Professional Style using Control Templates -->
+    <Style x:Key="ModernTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border x:Name="border"
+                                CornerRadius="8"
+                                BorderBrush="#D1D5D8"
+                                BorderThickness="1"
+                                Background="White"/>
+                        <ScrollViewer x:Name="PART_CONTENTHOST"
+                                      Margin="4"/>
+                        <!-- Placeholder -->
+                        <TextBlock x:Name="placeholder"
+                                   Text="Enter Here ....."
+                                   Foreground="#9CA3AF"
+                                   Margin="12,0,0,0"
+                                   VerticalAlignment="Center"
+                                   IsHitTestVisible="False"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Focus -->
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="border"
+                                    Property="BorderBrush"
+                                    Value="#2563EB"/>
+                        </Trigger>
+                        <!-- Hide Placeholder -->
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="placeholder"
+                                    Property="Visibility"
+                                    Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter TargetName="placeholder"
+                                    Property="Visibility"
+                                    Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="Text" Value=" ">
+                            <Setter TargetName="placeholder"
+                                    Property="Visibility"
+                                    Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
+    <!-- Card Using Button Template Style (Card Clickable) -->
+    <Style x:Key="CardButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="card"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="12"
+                            Padding="{TemplateBinding Padding}">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              ShadowDepth="2"
+                                              Opacity="0.2"/>
+                        </Border.Effect>
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="card"
+                                    Property="Opacity"
+                                    Value="0.95"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     
 </ResourceDictionary>

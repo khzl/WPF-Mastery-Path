@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_10.DashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_10"
+        xmlns:controls="clr-namespace:WPF.BootCamps.UserControls"
+        mc:Ignorable="d"
+        Title="DashboardView" Height="450" Width="800">
+    <Grid Margin="20" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Dashboard"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Margin="10"/>
+        <UniformGrid Grid.Row="1"
+                     Columns="4">
+            <controls:StatisticCardCompnent Title="Orders" Value="120"/>
+            <controls:StatisticCardCompnent Title="Revenue" Value="5300$"/>
+            <controls:StatisticCardCompnent Title="Customers" Value="89"/>
+            <controls:StatisticCardCompnent Title="Products" Value="42"/>
+        </UniformGrid>
+    </Grid>
+</Window>

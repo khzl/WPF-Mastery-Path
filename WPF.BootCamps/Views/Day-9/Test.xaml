@@ -9,5 +9,6 @@
     <Grid>
         <Button Content="Click Me"
                 Style="{StaticResource RoundedButtonStyle}"/>
+        <TextBox Style="{StaticResource ModernTextBoxStyle}" Margin="34,304,56,95"/>
     </Grid>
 </Window>
