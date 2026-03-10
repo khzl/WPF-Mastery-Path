@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_11.WorkoutOne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_11"
+        mc:Ignorable="d"
+        Title="WorkoutOne" Height="450" Width="800">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBox Text="{Binding Name , Mode=TwoWay}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Age , Mode=TwoWay}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="{Binding Name}" FontSize="20"/>
+            <TextBlock Text="{Binding Age}" FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</Window>

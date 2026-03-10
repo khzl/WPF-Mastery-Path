@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_11.WorkoutTwo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_11"
+        mc:Ignorable="d"
+        Title="WorkoutTwo" Height="450" Width="800">
+    <Grid>
+        <!-- Slider يتحكم بحجم النص -->
+        <StackPanel Margin="20">
+            <Slider Minimum="10"
+                    Maximum="60"
+                    Value="20"
+                    x:Name="fontSlider"/>
+            <TextBlock Text="Hello WPF WELCOME Khazaal"
+                       FontSize="{Binding ElementName=fontSlider , Path=Value}"
+                       Margin="0,20,0,0"/>
+            <!-- ال Slider يتحكم بحجم النص مباشرة -->
+        </StackPanel>
+    </Grid>
+</Window>

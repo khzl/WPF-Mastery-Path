@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_11.DataBindingExampleTwo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_11"
+        mc:Ignorable="d"
+        Title="DataBindingExampleTwo" Height="450" Width="800">
+    <Grid>
+        <Slider x:Name="VolumeSlider" Minimum="0" Maximum="100" Margin="60,66,60,325"/>
+        <TextBlock Text="{Binding Value , ElementName=VolumeSlider}" 
+                   Height="26" Margin="60,114,542,0" VerticalAlignment="Top"/>
+
+        <TextBlock Text="{Binding ProductName , RelativeSource={RelativeSource AncestorType=UserControl}}" Height="46" Margin="204,335,234,0" VerticalAlignment="Top"/>
+
+        <TextBlock Text="{Binding Name , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="46" Margin="495,142,60,0" VerticalAlignment="Top"/>
+        <TextBlock Text="{Binding Name}" Height="64" Margin="199,204,230,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
