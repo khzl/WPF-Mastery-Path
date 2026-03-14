@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows;
+using System.Windows.Input;
+using WPF.BootCamps.Helpers;
 
 namespace WPF.BootCamps.ViewModels
 {
@@ -30,6 +33,29 @@ namespace WPF.BootCamps.ViewModels
                 password = value;
                 OnPropertyChanged(nameof(Password));
             }
+        }
+
+        // Command
+        public ICommand? LoginCommand { get; } // ReadOnly
+
+        // public Constructor 
+        public LoginViewModel()
+        {
+            // adapt parameterless methods to the expected delegate signatures
+            LoginCommand = new RelayCommand(_ => Login(), _ => CanLogin());
+        }
+
+        // Private Login
+        private void Login()
+        {
+            MessageBox.Show($"Welocme {username}");
+        }
+
+        // private CanLogin
+        private bool CanLogin()
+        {
+            return !string.IsNullOrWhiteSpace(UserName)
+                && !string.IsNullOrWhiteSpace(Password);
         }
 
         // Event Handler 

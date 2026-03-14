@@ -10,40 +10,49 @@ namespace WPF.BootCamps.ViewModels
     public class CounterViewModel : INotifyPropertyChanged
     {
         // private property 
-        private int counter;
+        private int _counter;
 
         // public property
         public int Counter
         {
-            get => counter;
+            get => _counter;
             set
             {
-                counter = value;
+                _counter = value;
                 OnPropertyChanged(nameof(Counter));
             }
         }
 
         // Command 
         public ICommand? IncreaseCommand { get; } // ReadOnly
+        public ICommand? DecreaseCommand { get; } // ReadOnly
 
         // public Constructor 
         public CounterViewModel()
         {
-            IncreaseCommand = new RelayCommand(Increase);
+            IncreaseCommand = new RelayCommand(
+                execute: _ => Counter++,
+                canExecute: _ => Counter < 20);
+            DecreaseCommand = new RelayCommand(
+                execute: _ => Counter--,
+                canExecute: _ => CanDecrease());
+        }
+
+        private bool CanDecrease()
+        {
+            return Counter > 0;
         }
 
         // private method for Increase
-        private void Increase()
-        {
-            Counter++;
-        }
+        //private void Increase()
+        //{
+        //    Counter++;
+        //}
 
         //Event handler 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private void OnPropertyChanged(string name)
-        {
+        private void OnPropertyChanged(string name) => 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
     }
 }

@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_14.ToDoList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_14"
+        mc:Ignorable="d"
+        Title="ToDoList" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBox Text="{Binding NewTodo , Mode=TwoWay}"/>
+            <Button Content="Add" Command="{Binding AddCommand}" Margin="0,10"
+                    Style="{StaticResource CardButtonStyle}"/>
+            <ItemsControl ItemsSource="{Binding Todos}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" Width="200"/>
+                            <Button Content="Delete"
+                                    Command="{Binding DataContext.RemoveCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"
+                                    Style="{StaticResource DangerButtonStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
