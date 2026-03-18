@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_15.NavigationWithMVVM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_15"
+        xmlns:views="clr-namespace:WPF.BootCamps.Views.Day_15"
+        xmlns:vm="clr-namespace:WPF.BootCamps.ViewModels.NavigationWithView"
+        mc:Ignorable="d"
+        Title="NavigationWithMVVM" Height="450" Width="800">
+
+    <!-- هنا عن طريق هذا الملف نربط ViewModel نربطه ب View عن طريق DataTemplate -->
+    <Window.Resources>
+        
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <views:HomeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <views:SettingsView/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <Grid>
+        <!-- Content Control With Current View Or Window -->
+        <!-- علمود نعمل تنقل بين الشاشات نستخدم Content Control -->
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Content="Home" Command="{Binding ShowHomeCommand}"
+                        Margin="0,0,10,0" Style="{StaticResource CardButtonStyle}"/>
+                <Button Content="Settings"
+                        Command="{Binding ShowSettingsCommand}"
+                        Margin="0,0,10,0"
+                        Style="{StaticResource CardButtonStyle}"/>
+                <ContentControl Content="{Binding CurrentView}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

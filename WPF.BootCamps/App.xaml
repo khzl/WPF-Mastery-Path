@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPF.BootCamps"
-             StartupUri="Views/Day-14/ProductList.xaml">
+             StartupUri="Views/Day-15/NavigationWithMVVM.xaml">
+    
     <!-- StartupUri="MainWindow.xaml" يمكن تغييره إلى نافذة أخرى-->
     <Application.Resources>
         
@@ -10,10 +11,11 @@
         <!-- هنا نضيف و نربط كل الـ
         Styles And Colors اللي نعملها كلها نربطها هنا 
         عن طريق هذه الاوامر -->
-        
+
         <ResourceDictionary>
+            
             <ResourceDictionary.MergedDictionaries>
-                
+
                 <ResourceDictionary Source="/Resources/Colors/ColorsTest.xaml"/>
                 <!-- باستخدام هذا الامر نربط كل الـ Colors And Styles in App.XAML و نستخدم
                 الالوان و الستايلات اللي نعملها بالبرنامج هنا فقط نعرف هذولا ال الالولان و الستايلات داخل هذا الملف خاطر يتعرف عليهم -->
