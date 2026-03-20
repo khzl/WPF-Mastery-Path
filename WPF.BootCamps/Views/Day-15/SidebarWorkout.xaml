@@ -1,0 +1,47 @@
+﻿<Window x:Class="WPF.BootCamps.Views.Day_15.SidebarWorkout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.BootCamps.Views.Day_15"
+        xmlns:viewModel="clr-namespace:WPF.BootCamps.ViewModels.NavigationWorkout"
+        xmlns:views="clr-namespace:WPF.BootCamps.Views.Day_15"
+        mc:Ignorable="d"
+        Title="SidebarWorkout" Height="450" Width="800">
+    
+    <!-- Links Views Over DataTemplate -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/DataTemplates/DataTemplateSidebar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Sidebar -->
+        <StackPanel Background="#2C3E50">
+            <Button Content="Dashboard"
+                    Command="{Binding ShowDashboardCommand}"
+                    Margin="10"
+                    Style="{StaticResource ModernButtonStyle}"/>
+            <Button Content="Reports"
+                    Command="{Binding ShowReportsCommand}"
+                    Margin="10"
+                    Style="{StaticResource ModernButtonStyle}"/>
+            <Button Content="Settings"
+                    Command="{Binding ShowSettingsCommand}"
+                    Margin="10"
+                    Style="{StaticResource ModernButtonStyle}"/>
+        </StackPanel>
+        
+        <!-- Content -->
+        <ContentControl Grid.Column="1"
+                        Content="{Binding Navigation.CurrentView}"/>
+    </Grid>
+</Window>

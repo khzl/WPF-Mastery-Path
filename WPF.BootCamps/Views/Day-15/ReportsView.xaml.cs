@@ -10,18 +10,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WPF.BootCamps.ViewModels.NavigationWorkout;
+
 namespace WPF.BootCamps.Views.Day_15
 {
     /// <summary>
-    /// Interaction logic for SettingsView.xaml
+    /// Interaction logic for ReportsView.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class ReportsView : Window
     {
-        public SettingsView()
+        public ReportsView()
         {
             InitializeComponent();
-            // link SettingsViewModel in this View Using DataContext
-            DataContext = new SettingsViewModel();
+            DataContext = new ReportsViewModel();
         }
     }
 }
