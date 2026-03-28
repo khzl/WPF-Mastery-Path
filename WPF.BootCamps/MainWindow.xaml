@@ -4,20 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.BootCamps"
+        xmlns:vm="clr-namespace:WPF.BootCamps.ViewModels"
+        xmlns:views="clr-namespace:WPF.BootCamps.Views.Day_18"
         mc:Ignorable="d"
         Title="WPF BootCamps" Height="450" Width="800">
 
-    <Grid>
-        <!-- هنا تضاف عناصر التحكم  -->
-        <!-- Button Show Message -->
-        <Button
-            x:Name="btnClickMe"
-            Content="Click Me..!"
-            Width="100"
-            Height="40"
-            HorizontalAlignment="Center"
-            Click="btnClickMe_Click"/>
+    <Window.Resources>
+        
+        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+            <views:DashboardView/>
+        </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+            <views:OrdersView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:CustomersViewModel}">
+            <views:CustomersView/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Background="#2C3E50">
+
+            <Button Content="Dashboard"
+                Command="{Binding ShowDashboardCommand}"
+                Margin="10"/>
+
+            <Button Content="Orders"
+                Command="{Binding ShowOrdersCommand}"
+                Margin="10"/>
+
+            <Button Content="Customers"
+                Command="{Binding ShowCustomersCommand}"
+                Margin="10"/>
+
+        </StackPanel>
+
+        <!-- Content -->
+        <ContentControl Grid.Column="1"
+                    Content="{Binding Navigation.CurrentView}"/>
     </Grid>
-    
 </Window>

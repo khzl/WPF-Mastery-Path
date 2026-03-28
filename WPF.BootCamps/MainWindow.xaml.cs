@@ -21,13 +21,8 @@ namespace WPF.BootCamps
         {
             InitializeComponent();
             // MainWindow يستقبل ViewModel
-            DataContext = mainViewModel;
+            // DataContext = mainViewModel;
             // ألـ DI Container هو الذي يمرر ViewModel تلقائيا 
-        }
-        // Even Handler 
-        private void btnClickMe_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Welcome In World WPF ..!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

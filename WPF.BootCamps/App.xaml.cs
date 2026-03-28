@@ -3,7 +3,9 @@ using System.Data;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using WPF.BootCamps.Services;
+using WPF.BootCamps.Services.Interfaces;
 using WPF.BootCamps.ViewModels;
+//using WPF.BootCamps.ViewModels.NavigationWorkout;
 
 namespace WPF.BootCamps
 {
@@ -14,35 +16,40 @@ namespace WPF.BootCamps
     {
         // Create ServiceCollection 
         // Property 
-        //public static IServiceProvider? ServiceProvider { get; private set; }
+        public static IServiceProvider? ServiceProvider { get; private set; }
 
-        //protected override void OnStartup(StartupEventArgs e)
-        //{
-        //    var services = new ServiceCollection();
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var services = new ServiceCollection();
 
-        //    ConfigureServices(services);
+            ConfigureServices(services);
 
-        //    ServiceProvider = services.BuildServiceProvider();
+            ServiceProvider = services.BuildServiceProvider();
 
-        //    var window = ServiceProvider.GetRequiredService<MainWindow>();
-        //    window.DataContext = ServiceProvider.GetRequiredService<MainViewModel>();
-        //    window.Show();
-        //}
+            var window = ServiceProvider.GetRequiredService<MainWindow>();
+            window.DataContext = ServiceProvider.GetRequiredService<MainViewModel>();
+            window.Show();
+        }
 
-        //private void ConfigureServices(ServiceCollection services)
-        //{
-        //    // Register Views Here 
-        //    services.AddSingleton<MainWindow>();
+        private void ConfigureServices(ServiceCollection services)
+        {
+            // Register Views Here 
+            services.AddSingleton<MainWindow>();
 
-        //    // Register ViewModels here 
-        //    services.AddSingleton<MainViewModel>();
+            // Register ViewModels here 
+            services.AddSingleton<MainViewModel>();
+            services.AddTransient<DashboardViewModel>();
+            services.AddTransient<OrdersViewModel>();
+            services.AddTransient<CustomersViewModel>();
 
-        //    // Register Service Here 
-        //    services.AddSingleton<UserService>();
-        //    services.AddSingleton<LoggerService>();
-        //    services.AddSingleton<OrderService>();
+            // Register Service Here 
+            services.AddSingleton<INavigationService, NavigationService>();
 
-        //}
+            services.AddSingleton<UserService>();
+            services.AddSingleton<LoggerService>();
+            services.AddSingleton<OrderService>();
+
+        }
 
     }
 

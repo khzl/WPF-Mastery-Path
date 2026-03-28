@@ -6,10 +6,12 @@ using WPF.BootCamps.Services;
 
 namespace WPF.BootCamps.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : BaseViewModel , INotifyPropertyChanged
     {
         // private property
         private string? _name;
+        private object? _currentView;
+   
 
         // public property 
         public string? Name
@@ -19,6 +21,18 @@ namespace WPF.BootCamps.ViewModels
             {
                 _name = value;
                 OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        // public Property
+        public object? CurrentView
+        {
+            get => _currentView;
+            set
+            {
+                if (_currentView == value) return;
+                _currentView = value;
+                OnPropertyChanged(nameof(CurrentView));
             }
         }
 
@@ -35,13 +49,5 @@ namespace WPF.BootCamps.ViewModels
 
         // public Constructor 
         public MainViewModel() => Name = "Khazaal";
-
-        // Event Handler (nullable to satisfy nullable reference checks)
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
