@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using WPF.BootCamps.Services;
 
 namespace WPF.BootCamps.ViewModels
 {
@@ -20,6 +21,17 @@ namespace WPF.BootCamps.ViewModels
                 OnPropertyChanged(nameof(Name));
             }
         }
+
+        // public Property
+        public string? Time { get; } // ReadOnly
+
+        // public Constructor
+        public MainViewModel(TimeService timeService)
+        {
+            Time = timeService.GetCurrentTime();
+        }
+        // الـ ServiceContainer هو اللي يوفر الخدمة 
+
 
         // public Constructor 
         public MainViewModel() => Name = "Khazaal";
