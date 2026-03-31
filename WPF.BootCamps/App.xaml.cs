@@ -44,6 +44,7 @@ namespace WPF.BootCamps
 
             // Register Service Here 
             services.AddSingleton<INavigationService, NavigationService>();
+            services.AddSingleton<IDialogService, DialogService>();
 
             services.AddSingleton<UserService>();
             services.AddSingleton<LoggerService>();
