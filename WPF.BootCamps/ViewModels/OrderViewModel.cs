@@ -15,10 +15,15 @@ namespace WPF.BootCamps.ViewModels
         // private field 
         private readonly IDialogService _dialogService;
 
+        // public Property 
+        public string? Name { get; set; }
+
         // Command 
         public ICommand? DeleteCommand { get; } // ReadOnly
 
         public ICommand? OpenAddOrderCommand { get; } // ReadOnly
+
+        public ICommand? LoadCommand { get; } // ReadOnly
 
         // public Constructor (Constructor Injections)
         public OrderViewModel(IDialogService dialogService)
@@ -28,6 +33,19 @@ namespace WPF.BootCamps.ViewModels
             DeleteCommand = new RelayCommand(obj => DeleteOrder(obj));
 
             OpenAddOrderCommand = new RelayCommand(obj => OpenDialog(obj));
+
+            LoadCommand = new AsyncRelayCommand(() => LoadDataAsync());
+
+            // العملية تعمل بالخلفية
+            // الواجهة تبقى Responsive 
+        }
+
+        // Background Thread 
+        public async Task LoadDataAsync()
+        {
+            await Task.Delay(5000);
+
+            Name = "Loaded Data"; // Safety
         }
 
         // Show Add Customer Dialog
