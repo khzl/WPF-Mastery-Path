@@ -8,3 +8,5 @@
 /WPF.BootCamps/obj
 *.user
 *.csproj
+/YourApp.ProjectArchitecture/obj
+/YourApp.ProjectArchitecture/AssemblyInfo.cs
