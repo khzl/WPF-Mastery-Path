@@ -4,7 +4,9 @@ using System.Text;
 
 namespace YourApp.ProjectArchitecture.ViewModels
 {
-    internal class SettingsViewModel
+    public class SettingsViewModel
     {
+        // Property
+        public string? Title => "Settings Screen";
     }
 }

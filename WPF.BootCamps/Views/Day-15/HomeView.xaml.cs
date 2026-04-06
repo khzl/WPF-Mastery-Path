@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WPF.BootCamps.ViewModels.NavigationWithView;
 namespace WPF.BootCamps.Views.Day_15
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace WPF.BootCamps.Views.Day_15
         {
             InitializeComponent();
             // link HomeViewModel in this View Using DataContext
-            DataContext = new HomeViewModel();
+            //DataContext = new HomeViewModel();
         }
     }
 }

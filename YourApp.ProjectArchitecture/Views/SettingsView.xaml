@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="SettingsView" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock Text="{Binding Title}"
+                   FontSize="30"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
     </Grid>
 </Window>

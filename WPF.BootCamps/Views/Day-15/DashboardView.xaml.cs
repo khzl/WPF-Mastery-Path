@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WPF.BootCamps.ViewModels.NavigationWorkout;
 
 namespace WPF.BootCamps.Views.Day_15
 {
@@ -21,7 +20,7 @@ namespace WPF.BootCamps.Views.Day_15
         public DashboardView()
         {
             InitializeComponent();
-            DataContext = new DashboardViewModel();
+            //DataContext = new DashboardViewModel();
         }
     }
 }

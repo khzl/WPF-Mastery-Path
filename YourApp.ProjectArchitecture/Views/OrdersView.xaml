@@ -4,9 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourApp.ProjectArchitecture.Views"
+        xmlns:Converter="clr-namespace:YourApp.ProjectArchitecture.Converters"
         mc:Ignorable="d"
         Title="OrdersView" Height="450" Width="800">
+
+    <Window.Resources>
+        <Converter:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+    </Window.Resources>
+    
     <Grid>
-        
+        <StackPanel>
+
+            <TextBlock Text="{Binding Title}"
+                   FontSize="30"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+            <Button Content="Load Orders"
+                    Command="{Binding LoadCommand}"/>
+
+            <TextBlock Text="Loading......"
+                       Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}"/>
+
+            <ItemsControl ItemsSource="{Binding Orders}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" Width="150"/>
+
+                            <Button Content="Delete"
+                                    Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
     </Grid>
+    
 </Window>

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace YourApp.ProjectArchitecture.Models
 {
-    internal class ClientModel_Order
+    public class ClientModel_Order
     {
+        public int OrderId { get; set; }
+        public string? OrderName { get; set; }
     }
 }

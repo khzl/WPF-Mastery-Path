@@ -4,7 +4,9 @@ using System.Text;
 
 namespace YourApp.ProjectArchitecture.ViewModels
 {
-    internal class DashboardViewModel
+    public class DashboardViewModel
     {
+        // Property
+        public string? Title => "Dashboard Screen";
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Input;
 using WPF.BootCamps.Helpers;
 using WPF.BootCamps.Services.Interfaces;
-using WPF.BootCamps.ViewModels.NavigationWorkout;
+
 
 namespace WPF.BootCamps.ViewModels
 {
