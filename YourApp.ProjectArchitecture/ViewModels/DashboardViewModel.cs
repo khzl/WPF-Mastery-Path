@@ -8,5 +8,6 @@ namespace YourApp.ProjectArchitecture.ViewModels
     {
         // Property
         public string? Title => "Dashboard Screen";
+        // test 
     }
 }
